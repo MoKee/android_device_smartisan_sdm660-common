@@ -31,6 +31,7 @@
 #define __QCAMERA3_CHANNEL_H__
 
 // System dependencies
+#include <sys/stat.h>
 #include <utils/List.h>
 #include <utils/Mutex.h>
 #include <utils/Vector.h>
