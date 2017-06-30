@@ -221,11 +221,6 @@ service thermal-engine /vendor/bin/thermal-engine
 #    class core
 #    oneshot
 #
-service time_daemon /vendor/bin/time_daemon
-   class late_start
-   user root
-   group root
-
 service adsprpcd_root /system/bin/adsprpcd
    class main
    user media
