@@ -21,7 +21,7 @@
 # definition file).
 #
 
-DEVICE_PATH := device/smartisan/osborn
+COMMON_PATH := device/smartisan/sdm660-common
 
 # SDClang configuration
 TARGET_USE_SDCLANG := true
@@ -111,7 +111,6 @@ AUDIO_FEATURE_ENABLED_SPLIT_A2DP := true
 AUDIO_FEATURE_ENABLED_RAS := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAS_QCA_BT_ROME := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
@@ -132,8 +131,8 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 WITH_MOKEE_CHARGER := false
 
 # MK Hardware
-BOARD_HARDWARE_CLASS += hardware/mokee/mkhw
 BOARD_USES_MOKEE_HARDWARE := true
+BOARD_HARDWARE_CLASS += hardware/mokee/mkhw
 
 # CNE and DPM
 BOARD_USES_QCNE := true
@@ -165,7 +164,7 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN += $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN += $(COMMON_PATH)/config.fs
 
 # GPS
 TARGET_NO_RPC := true
@@ -174,8 +173,8 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc0/
@@ -211,11 +210,14 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
+# Properties
+TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
+
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/root/recovery.fstab
 BOARD_SUPPRESS_EMMC_WIPE := true
 
 # RIL
@@ -224,14 +226,14 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_osborn
-TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_smartisan
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-09-01
 
 # SELinux
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor-minimal
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor-minimal
 
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
@@ -252,4 +254,4 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # inherit from the proprietary version
--include vendor/smartisan/osborn/BoardConfigVendor.mk
+-include vendor/smartisan/sdm660-common/BoardConfigVendor.mk

@@ -17,9 +17,6 @@
 
 set -e
 
-DEVICE=osborn
-VENDOR=smartisan
-
 INITIAL_COPYRIGHT_YEAR=2018
 
 # Load extract_utils and do some sanity checks
@@ -36,10 +33,10 @@ fi
 . "$HELPER"
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$MK_ROOT"
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$MK_ROOT" true
 
 # Copyright headers and guards
-write_headers
+write_headers "osborn oxford"
 
 write_makefiles "$MY_DIR"/proprietary-files.txt true
 write_makefiles "$MY_DIR"/proprietary-files-qc.txt true

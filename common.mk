@@ -21,7 +21,7 @@
 # definition file).
 #
 
-$(call inherit-product, vendor/smartisan/osborn/osborn-vendor.mk)
+$(call inherit-product, vendor/smartisan/sdm660-common/sdm660-common-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -258,7 +258,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.osborn
+    android.hardware.light@2.0-service.smartisan
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \

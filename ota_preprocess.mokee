@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-cp $ANDROID_BUILD_TOP/device/smartisan/osborn/prebuilt/bin/deunify.sh out/
+cp $ANDROID_BUILD_TOP/device/smartisan/sdm660-common/prebuilt/bin/deunify.sh out/
 
 function ensure_file() {
   if [ -f z2/$1 ]; then

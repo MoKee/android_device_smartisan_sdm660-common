@@ -194,6 +194,6 @@ Value *VerifyModemFn(const char *name, State *state,
     return StringValue(strdup(ret ? "1" : "0"));
 }
 
-void Register_librecovery_updater_osborn() {
-    RegisterFunction("osborn.verify_modem", VerifyModemFn);
+void Register_librecovery_updater_smartisan() {
+    RegisterFunction("smartisan.verify_modem", VerifyModemFn);
 }

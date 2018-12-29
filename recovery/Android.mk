@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := librecovery_updater_osborn
+LOCAL_MODULE := librecovery_updater_smartisan
 LOCAL_MODULE_TAGS := eng
 
 LOCAL_C_INCLUDES := \
