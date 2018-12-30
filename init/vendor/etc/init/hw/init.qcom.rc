@@ -259,6 +259,7 @@ on post-fs-data
     mkdir /data/vendor/wifi/wigig_hostapd 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /data/vendor/wlan_logs 0770 wifi wifi
 
     #create port-bridge log dir
     mkdir /data/vendor/port_bridge 0770 radio radio
