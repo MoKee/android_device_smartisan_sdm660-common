@@ -224,9 +224,14 @@ on post-fs-data
     # create QDMA dropbox
     mkdir /data/vendor/qdmastats 0700 system system
     mkdir /data/vendor/qdma 0770 system system
+    mkdir /dev/socket/qdma 0770 system system
+    chmod 2770 /dev/socket/qdma
 
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
+
+    # Create /data/vendor/tzstorage directory for SFS listener
+    mkdir /data/vendor/tzstorage 0770 system system
 
     # Create directory for apps access via QTEEConnector
     mkdir /data/vendor/qtee 0770 system system
@@ -236,13 +241,11 @@ on post-fs-data
 
     #Create folder for mm-qcamera-daemon
     mkdir /data/misc/camera 0770 camera camera
+    mkdir /data/vendor/camera 0770 camera camera
 
-    mkdir /data/misc/ipa 0700 net_admin net_admin
     #Create directory for tftp
-    mkdir /data/tombstones 0771 system system
     mkdir /data/vendor/tombstones 0771 system system
 
-    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
     mkdir /data/vendor/ramdump 0771 root system
     mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
     mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
@@ -252,25 +255,16 @@ on post-fs-data
     mkdir /data/vendor/wifi/sockets 0770 wifi wifi
     mkdir /data/vendor/wifi/hostapd 0770 wifi wifi
     mkdir /data/vendor/wifi/hostapd/ctrl 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/vendor/wifi/wigig_hostapd 0770 wifi wifi
-    mkdir /data/misc/wifi 0770 wifi wifi
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi
-    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
-    mkdir /data/misc/dhcp 0777 dhcp dhcp
-    chown dhcp dhcp /data/misc/dhcp
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
     #create port-bridge log dir
-    mkdir /data/misc/port_bridge 0770 radio radio
-    chmod 0770 /data/misc/port_bridge
     mkdir /data/vendor/port_bridge 0770 radio radio
     chmod 0770 /data/vendor/port_bridge
 
     #create netmgr log dir
-    mkdir /data/misc/netmgr 0770 radio radio
-    chmod 0770 /data/misc/netmgr
     mkdir /data/vendor/netmgr 0770 radio radio
     chmod 0770 /data/vendor/netmgr
 
@@ -278,34 +272,32 @@ on post-fs-data
     mkdir /data/vendor/ipa 0770 radio radio
     chmod 0770 /data/vendor/ipa
 
+    #Create QTI dir for logs
+    mkdir /data/vendor/dataqti 0770 radio radio
+    chmod 0770 /data/vendor/dataqti
+
     # Create the directories used by CnE subsystem
     mkdir /data/vendor/connectivity 0771 radio radio
     chown radio radio /data/vendor/connectivity
 
-    # Create the directories used by DPM subsystem
-    mkdir /data/dpm 0771 system system
-    chown system system /data/dpm
-
-    mkdir /data/dpm/nsrm 0771 system system
-    chown system system /data/dpm/nsrm
-
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
+    mkdir /data/vendor/audio 0770 audio audio
     mkdir /data/vendor/misc/audio 0770 audio audio
 
     # Create directory for audio delta files
     mkdir /data/misc/audio/acdbdata 0770 media audio
     mkdir /data/misc/audio/acdbdata/delta 0770 media audio
+    mkdir /data/vendor/audio/acdbdata 0770 media audio
+    mkdir /data/vendor/audio/acdbdata/delta 0770 media audio
     mkdir /data/vendor/misc/audio/acdbdata 0770 media audio
     mkdir /data/vendor/misc/audio/acdbdata/delta 0770 media audio
 
-    # Create directory used by the DASH client
-    mkdir /data/misc/dash 0770 media audio
-
-    # Create directory used by display clients
-    mkdir /data/misc/display 0770 system graphics
     # Create directory for radio
     mkdir /data/vendor/radio 0770 system radio
+
+    # Create directory for modem_config
+    mkdir /data/vendor/modem_config 0570 radio root
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /persist again so because mount is run as root + defaults
@@ -324,19 +316,20 @@ on post-fs-data
     chown system system /sys/devices/platform/msm_sdcc.4/polling
 
     #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
-    mkdir /data/system 0775 system system
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
     #Create directories for Location services
-    mkdir /data/misc/location 0770 gps gps
-    mkdir /data/misc/location/mq 0770 gps gps
-    mkdir /data/misc/location/xtwifi 0770 gps gps
-    mkdir /data/misc/location/gpsone_d 0770 system gps
-    mkdir /data/misc/location/quipc 0770 gps system
-    mkdir /data/misc/location/gsiff 0770 gps gps
     mkdir /data/vendor/location 0770 gps gps
     mkdir /data/vendor/location/mq 0770 gps gps
     mkdir /data/vendor/location/xtwifi 0770 gps gps
+    mkdir /dev/socket/location 0770 gps gps
+    mkdir /dev/socket/location/mq 0770 gps gps
+    mkdir /dev/socket/location/xtra 0770 gps gps
+    mkdir /data/vendor/location-partner 0770 gps gps
+    mkdir /data/vendor/location-partner/dre 0770 gps gps
+    mkdir /data/vendor/location-partner/ppe 0770 gps gps
+    mkdir /dev/socket/location 0770 gps gps
+    mkdir /dev/socket/location/ehub 0770 gps gps
 
     #Create directory from IMS services
     mkdir /data/shared 0755
@@ -347,25 +340,16 @@ on post-fs-data
     chown system system /data/fota
 
     # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
-
-    mkdir /data/audio/ 0770 media audio
-    mkdir /data/vendor/audio/ 0770 media audio
-
-    # Create a folder for audio delta files
-    mkdir /data/audio/acdbdata 0770 media audio
-    mkdir /data/audio/acdbdata/delta 0770 media audio
-    mkdir /data/vendor/audio/acdbdata 0770 media audio
-    mkdir /data/vendor/audio/acdbdata/delta 0770 media audio
+    mkdir /data/vendor/time/ 0700 system system
 
     setprop vold.post_fs_data_done 1
 
     #Create a folder for SRS to be able to create a usercfg file
-    mkdir /data/data/media 0770 media media
+    #mkdir /data/data/media 0770 media media
 
     #Create FM dir for patchdownloader
-    mkdir /data/misc/fm 0770 system system
-    chmod 0770 /data/misc/fm
+    mkdir /data/vendor/fm 0770 system system
+    chmod 0770 /data/vendor/fm
 
     #Create PERFD deamon related dirs
     mkdir /data/vendor/perfd 0770 root system
@@ -380,27 +364,15 @@ on post-fs-data
     mkdir /data/vendor/iop 0700 root system
 
     # Mark the copy complete flag to not completed
-    write /data/misc/radio/copy_complete 0
-    chown radio radio /data/misc/radio/copy_complete
-    chmod 0660 /data/misc/radio/copy_complete
     write /data/vendor/radio/copy_complete 0
     chown radio radio /data/vendor/radio/copy_complete
     chmod 0660 /data/vendor/radio/copy_complete
 
     # copy prebuilt qcril.db files always
-    copy /vendor/qcril.db /data/misc/radio/qcril_prebuilt.db
-    chown radio radio /data/misc/radio/qcril_prebuilt.db
-    chmod 0660 /data/misc/radio/qcril_prebuilt.db
     copy /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril_prebuilt.db
     chown radio radio /data/vendor/radio/qcril_prebuilt.db
     chmod 0660 /data/vendor/radio/qcril_prebuilt.db
     # File flags for prebuilt ril db file
-    write /data/misc/radio/prebuilt_db_support 1
-    chown radio radio /data/misc/radio/prebuilt_db_support
-    chmod 0400 /data/misc/radio/prebuilt_db_support
-    write /data/misc/radio/db_check_done 0
-    chown radio radio /data/misc/radio/db_check_done
-    chmod 0660 /data/misc/radio/db_check_done
     write /data/vendor/radio/prebuilt_db_support 1
     chown radio radio /data/vendor/radio/prebuilt_db_support
     chmod 0400 /data/vendor/radio/prebuilt_db_support
@@ -409,12 +381,6 @@ on post-fs-data
     chmod 0660 /data/vendor/radio/db_check_done
 
     # qti-logkit data
-    mkdir /data/misc/qti-logkit/ 0771 system system
-    mkdir /data/misc/qti-logkit/shared-privileged/ 2770 system system
-    mkdir /data/misc/qti-logkit/shared-public/ 2770 system qcom_diag
-    mkdir /data/misc/qti-logkit/socket-privileged/ 2770 system system
-    mkdir /data/misc/qti-logkit/socket-public/ 2750 system qcom_diag
-    mkdir /data/misc/qti-logkit/logdata/ 2750 system shell
     mkdir /data/vendor/qti-logkit/ 0771 system system
     mkdir /data/vendor/qti-logkit/shared-privileged/ 2770 system system
     mkdir /data/vendor/qti-logkit/shared-public/ 2770 system diag
@@ -423,18 +389,22 @@ on post-fs-data
     mkdir /data/vendor/qti-logkit/logdata/ 2750 system shell
 
     #Create SWAP related dirs
-    mkdir /data/system/swap 0770 root system
-    chmod 2770 /data/system/swap
+    mkdir /data/vendor/swap 0770 root system
+    chmod 2770 /data/vendor/swap
 
     # set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
+    write /sys/block/dm-2/queue/read_ahead_kb 2048
 
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
 
-    #Create FTM_AP dir for factory test
-    mkdir /data/FTM_AP 0775 system system
+    #Create dir for TUI
+    mkdir /data/vendor/tui 0700 system system
+
+    #Start move time data to /data/vendor once post-fs-data done
+    start vendor.move_time_data
 
 service nqnfcinfo /vendor/bin/nqnfcinfo
     class late_start
