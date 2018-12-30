@@ -65,6 +65,14 @@ on fs
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev noatime barrier=1
     mkdir /persist/data 0700 system system
     mkdir /persist/bms 0700 root system
+    mkdir /persist/hlos_rfs 0700 vendor_rfs vendor_rfs
+    mkdir /persist/hlos_rfs/shared 0700 vendor_rfs vendor_rfs
+    mkdir /persist/rfs 0700 vendor_rfs vendor_rfs
+    mkdir /persist/rfs/msm 0700 vendor_rfs vendor_rfs
+    mkdir /persist/rfs/msm/adsp 0700 vendor_rfs vendor_rfs
+    mkdir /persist/rfs/msm/mpss 0700 vendor_rfs vendor_rfs
+    mkdir /persist/rfs/msm/slpi 0700 vendor_rfs vendor_rfs
+    mkdir /persist/rfs/shared 0700 vendor_rfs vendor_rfs
     restorecon_recursive /persist
     write /sys/kernel/boot_adsp/boot 1
 
