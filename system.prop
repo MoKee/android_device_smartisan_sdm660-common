@@ -234,6 +234,9 @@ camera.aux.packagelist=org.codeaurora.snapcam
 #disable UBWC for camera
 persist.camera.preview.ubwc=0
 
+#Enable HAL3
+persist.camera.HAL3.enabled=1
+
 # Create zram disk
 ro.vendor.qti.config.zram=true
 
