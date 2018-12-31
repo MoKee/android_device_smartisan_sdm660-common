@@ -71,6 +71,5 @@ sed -i 's|/system/etc/|/vendor/etc/|g' $BLOB_ROOT/vendor/lib/hw/camera.sdm660.so
 sed -i 's|/system/etc/|/vendor/etc/|g' $BLOB_ROOT/vendor/lib/libmmcamera2_sensor_modules.so
 sed -i 's|/system/etc/|/vendor/etc/|g' $BLOB_ROOT/vendor/lib/libmms_hal_vstab.so
 
-# Fingerprint
+# Fingerprint - FPC
 sed -i 's|\x00fpcfingerprint\x00|\x00fingerprint\x00\x00\x00\x00|' $BLOB_ROOT/vendor/lib64/hw/fingerprint.fpc.so
-sed -i 's|\x00goodixfingerprint\x00|\x00fingerprint\x00\x00\x00\x00\x00\x00\x00|' $BLOB_ROOT/vendor/lib64/hw/fingerprint.goodix.so
