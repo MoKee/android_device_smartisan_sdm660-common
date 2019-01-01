@@ -526,6 +526,7 @@ etc/permissions/telephonyservice.xml
 framework/QtiTelephonyServicelibrary.jar
 framework/embmslibrary.jar
 framework/qcrilhook.jar
+framework/qti-telephony-common.jar|e529711775c31da38c9ecd1ab94b27ee15570dc4
 vendor/bin/ATFWD-daemon
 vendor/bin/diag_callback_sample
 vendor/bin/diag_dci_sample
