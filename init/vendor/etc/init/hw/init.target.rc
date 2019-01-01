@@ -88,7 +88,7 @@ on post-fs-data
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
     mkdir /data/vendor/hbtp 0750 system system
-    mkdir /persist/qti_fp 0700 system system
+    mkdir /mnt/vendor/persist/qti_fp 0700 system system
     mkdir /data/misc/seemp 0700 system system
     mkdir /data/misc/tloc 0700 system drmrpc
 
@@ -109,22 +109,22 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
     ####Regionalization config and prop files####
-    chmod 0644 /persist/speccfg/spec
-    chmod 0644 /persist/speccfg/devicetype
-    chmod 0644 /persist/speccfg/mbnversion
-    chmod 0644 /persist/speccfg/.not_triggered
-    chmod 0644 /persist/speccfg/vendor_ro.prop
-    chmod 0644 /persist/speccfg/vendor_persist.prop
-    chmod 0644 /persist/speccfg/submask
-    chmod 0644 /persist/speccfg/partition
-    chown system system /persist/speccfg/spec
-    chown system system /persist/speccfg/devicetype
-    chown system system /persist/speccfg/mbnversion
-    chown system system /persist/speccfg/.not_triggered
-    chown system system /persist/speccfg/vendor_ro.prop
-    chown system system /persist/speccfg/vendor_persist.prop
-    chown system system /persist/speccfg/submask
-    chown system system /persist/speccfg/partition
+    chmod 0644 /mnt/vendor/persist/speccfg/spec
+    chmod 0644 /mnt/vendor/persist/speccfg/devicetype
+    chmod 0644 /mnt/vendor/persist/speccfg/mbnversion
+    chmod 0644 /mnt/vendor/persist/speccfg/.not_triggered
+    chmod 0644 /mnt/vendor/persist/speccfg/vendor_ro.prop
+    chmod 0644 /mnt/vendor/persist/speccfg/vendor_persist.prop
+    chmod 0644 /mnt/vendor/persist/speccfg/submask
+    chmod 0644 /mnt/vendor/persist/speccfg/partition
+    chown system system /mnt/vendor/persist/speccfg/spec
+    chown system system /mnt/vendor/persist/speccfg/devicetype
+    chown system system /mnt/vendor/persist/speccfg/mbnversion
+    chown system system /mnt/vendor/persist/speccfg/.not_triggered
+    chown system system /mnt/vendor/persist/speccfg/vendor_ro.prop
+    chown system system /mnt/vendor/persist/speccfg/vendor_persist.prop
+    chown system system /mnt/vendor/persist/speccfg/submask
+    chown system system /mnt/vendor/persist/speccfg/partition
 
 on property:sys.boot_completed=1
     # Set BFQ I/O scheduler

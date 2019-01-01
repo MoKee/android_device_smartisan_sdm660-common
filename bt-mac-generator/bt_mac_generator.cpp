@@ -32,7 +32,7 @@
 #define MAC_SIZE 6
 
 static int force_random = 0;
-static const char PERSIST_BDADDR_PATH[] = "/persist/bd_addr.txt";
+static const char PERSIST_BDADDR_PATH[] = "/mnt/vendor/persist/bd_addr.txt";
 static const char VENDOR_BT_MAC_PATH[]  = "/data/vendor/mac_addr/bt.mac";
 
 static void update_bt_mac(uint8_t *addr, bool random) {
