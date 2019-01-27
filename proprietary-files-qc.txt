@@ -363,6 +363,18 @@ vendor/lib64/vendor.qti.hardware.iop@2.0.so
 vendor/lib/hw/keystore.sdm660.so
 vendor/lib64/hw/keystore.sdm660.so
 
+# Listen
+vendor/etc/audio.bsd
+vendor/lib/hw/sound_trigger.primary.sdm660.so
+vendor/lib/libadpcmdec.so
+vendor/lib/libgcs-calwrapper.so
+vendor/lib/libgcs-ipc.so
+vendor/lib/libgcs-osal.so
+vendor/lib/libgcs.so
+vendor/lib/libnwa.so
+vendor/lib/libsmwrapper.so
+vendor/lib/libsse.so
+
 # Keymaster
 vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libkeymasterprovision.so
