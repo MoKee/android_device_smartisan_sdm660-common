@@ -987,6 +987,8 @@ typedef struct {
     INCLUDE(CAM_INTF_META_LENS_FOCAL_LENGTH,            float,                       1);
     INCLUDE(CAM_INTF_META_LENS_FOCUS_DISTANCE,          float,                       1);
     INCLUDE(CAM_INTF_META_FOCUS_VALUE,                  float,                       1);
+    INCLUDE(SMARTISAN_03,                               uint64_t,                    1);
+    INCLUDE(SMARTISAN_04,                               uint32_t,                    1);
     INCLUDE(CAM_INTF_META_SPOT_LIGHT_DETECT,            uint8_t,                     1);
     INCLUDE(CAM_INTF_META_LENS_FOCUS_RANGE,             float,                       2);
     INCLUDE(CAM_INTF_META_LENS_STATE,                   cam_af_lens_state_t,         1);
@@ -1178,6 +1180,8 @@ typedef struct {
     INCLUDE(CAM_INTF_META_BINNING_CORRECTION_MODE,      cam_binning_correction_mode_t,  1);
 
     /* HAL1 and HAL3 Dual Camera */
+    INCLUDE(SMARTISAN_01,                               uint32_t,                    1);
+    INCLUDE(SMARTISAN_02,                               uint32_t,                    1);
     INCLUDE(CAM_INTF_META_OIS_READ_DATA,                cam_ois_data_t,              1);
     INCLUDE(CAM_INTF_PARAM_BOKEH_BLUR_LEVEL,            cam_rtb_blur_info_t,         1);
     INCLUDE(CAM_INTF_META_RTB_DATA,                     cam_rtb_msg_type_t,          1);
