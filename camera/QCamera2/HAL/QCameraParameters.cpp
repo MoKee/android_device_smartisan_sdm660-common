@@ -48,8 +48,6 @@
 #include "QCameraParameters.h"
 #include "QCameraTrace.h"
 
-#include "dualcameraddm_wrapper.h"
-
 extern "C" {
 #include "mm_camera_dbg.h"
 }
@@ -16899,7 +16897,8 @@ bool QCameraParameters::needAnalysisStream()
  *==========================================================================*/
 void QCameraParameters::getDepthMapSize(int &width, int &height)
 {
-    qrcp::getDepthMapSize(CAM_BOKEH_TELE_WIDTH, CAM_BOKEH_TELE_HEIGHT, width, height);
+     (void)width;
+     (void)height;
 }
 
 void QCameraParameters::setBokehSnaphot(bool enable)
