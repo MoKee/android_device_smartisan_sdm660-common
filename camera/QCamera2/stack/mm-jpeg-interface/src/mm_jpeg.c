@@ -2413,7 +2413,7 @@ int32_t mm_jpeg_init(mm_jpeg_obj *my_obj)
   }
   LOGD("IS lib2d_Enable %d", my_obj->is_lib2d_enable);
 
-  if (my_obj->is_lib2d_enable) {
+#ifdef LIB2D_ROTATION_ENABLE
     cam_format_t lib2d_format;
     LOGD("Enable lib2d rotation");
     lib2d_error lib2d_err = MM_LIB2D_SUCCESS;
@@ -2425,7 +2425,7 @@ int32_t mm_jpeg_init(mm_jpeg_obj *my_obj)
       LOGE("lib2d init for rotation failed\n");
       my_obj->static_lib2d_handle = NULL;
     }
-  }
+#endif
 
 
   return rc;
@@ -2448,13 +2448,13 @@ int32_t mm_jpeg_deinit(mm_jpeg_obj *my_obj)
   int32_t rc = 0;
   uint32_t i = 0;
 
-  if (my_obj->is_lib2d_enable) {
+#ifdef LIB2D_ROTATION_ENABLE
     lib2d_error lib2d_err = MM_LIB2D_SUCCESS;
     lib2d_err = mm_lib2d_deinit(my_obj->static_lib2d_handle);
     if (lib2d_err != MM_LIB2D_SUCCESS) {
       LOGE("Error in mm_lib2d_deinit \n");
     }
-  }
+#endif
 
   /* release jobmgr thread */
   rc = mm_jpeg_jobmgr_thread_release(my_obj);
@@ -2861,7 +2861,7 @@ int32_t mm_jpeg_start_job(mm_jpeg_obj *my_obj,
 
   memset(node, 0, sizeof(mm_jpeg_job_q_node_t));
   node->enc_info.encode_job = job->encode_job;
-  if (my_obj->is_lib2d_enable) {
+#ifdef LIB2D_ROTATION_ENABLE
     if (p_session->lib2d_rotation_flag) {
       rc = mm_jpeg_lib2d_rotation(p_session, node, job, job_id);
       LOGH("Lib2d rotation done %d", rc);
@@ -2870,7 +2870,7 @@ int32_t mm_jpeg_start_job(mm_jpeg_obj *my_obj,
         return rc;
       }
     }
-  }
+#endif
 
   if (p_session->thumb_from_main) {
     node->enc_info.encode_job.thumb_dim.src_dim =
@@ -3146,7 +3146,7 @@ int32_t mm_jpeg_create_session(mm_jpeg_obj *my_obj,
       p_session->params.thumb_dim.crop = p_session->params.main_dim.crop;
     }
 
-  if (my_obj->is_lib2d_enable) {
+#ifdef LIB2D_ROTATION_ENABLE
     if (p_session->params.rotation) {
       if (my_obj->static_lib2d_handle == NULL) {
         LOGE("lib2d init for rotation failed\n");
@@ -3161,9 +3161,9 @@ int32_t mm_jpeg_create_session(mm_jpeg_obj *my_obj,
       p_session->lib2d_rotation_flag = 0;
     }
     LOGH("lib2d rotation flag %d", p_session->lib2d_rotation_flag);
-  } else {
+#else
     p_session->lib2d_rotation_flag = 0;
-  }
+#endif
 
     if (p_session->lib2d_rotation_flag) {
       p_session->num_src_rot_bufs = p_session->params.num_src_bufs;
