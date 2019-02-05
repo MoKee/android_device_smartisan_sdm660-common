@@ -60,6 +60,8 @@ LOCAL_SRC_FILES += \
         util/QCameraClearSight.cpp
 endif
 
+LOCAL_CFLAGS += -Wno-c++14-extensions
+
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
 
