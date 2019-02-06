@@ -83,6 +83,7 @@ sed -i 's|/data/misc/camera|/data/vendor/qcam|g' $BLOB_ROOT/vendor/lib/libmmcame
 sed -i 's|/data/misc/camera|/data/vendor/qcam|g' $BLOB_ROOT/vendor/lib/libmmcamera_dbg.so
 sed -i 's|/data/misc/camera|/data/vendor/qcam|g' $BLOB_ROOT/vendor/lib/libmmcamera_hvx_grid_sum.so
 sed -i 's|/data/misc/camera|/data/vendor/qcam|g' $BLOB_ROOT/vendor/lib/libmmcamera_imglib.so
+sed -i 's|/data/misc/camera|/data/vendor/qcam|g' $BLOB_ROOT/vendor/lib/libmmcamera_interface.so
 sed -i 's|/data/misc/camera|/data/vendor/qcam|g' $BLOB_ROOT/vendor/lib/libmmcamera_isp_mesh_rolloff44.so
 sed -i 's|/data/misc/camera|/data/vendor/qcam|g' $BLOB_ROOT/vendor/lib/libmmcamera_pdaf.so
 sed -i 's|/data/misc/camera|/data/vendor/qcam|g' $BLOB_ROOT/vendor/lib/libmmcamera_pdafcamif.so
