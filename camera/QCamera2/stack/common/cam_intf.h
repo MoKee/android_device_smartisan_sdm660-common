@@ -677,6 +677,8 @@ typedef struct cam_capability{
 
     /*Mono Stats support*/
     uint8_t is_mono_stats_suport;
+
+    volatile char smartisan_reversed[2080];
 } cam_capability_t;
 
 typedef enum {
