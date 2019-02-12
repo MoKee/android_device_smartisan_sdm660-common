@@ -3988,7 +3988,7 @@ int32_t QCamera3HardwareInterface::orchestrateRequest(
         int32_t expCompensation = hdr_exp_values;
         uint8_t aeLock = 1;
         modified_meta.update(ANDROID_CONTROL_AE_EXPOSURE_COMPENSATION, &expCompensation, 1);
-        modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
+        // modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
         camera_metadata_t *modified_settings = modified_meta.release();
         request->settings = modified_settings;
 
@@ -4009,7 +4009,7 @@ int32_t QCamera3HardwareInterface::orchestrateRequest(
         expCompensation = hdr_exp_values;
         aeLock = 1;
         modified_meta.update(ANDROID_CONTROL_AE_EXPOSURE_COMPENSATION, &expCompensation, 1);
-        modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
+        // modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
         modified_settings = modified_meta.release();
         request->settings = modified_settings;
 
@@ -4047,7 +4047,7 @@ int32_t QCamera3HardwareInterface::orchestrateRequest(
         expCompensation = hdr_exp_values;
         aeLock = 1;
         modified_meta.update(ANDROID_CONTROL_AE_EXPOSURE_COMPENSATION, &expCompensation, 1);
-        modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
+        // modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
         modified_settings = modified_meta.release();
         request->settings = modified_settings;
 
