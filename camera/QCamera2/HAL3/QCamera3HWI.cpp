@@ -8223,6 +8223,23 @@ int QCamera3HardwareInterface::initCapabilities(uint32_t cameraId)
         LOGD("override active array size to (%d, %d).", raw_dim.width, raw_dim.height);
     }
 
+    if (gCamCapability[cameraId]->position == CAM_POSITION_FRONT) {
+        for (size_t i = 0; i < ARRAY_SIZE(camera1_picture_sizes_override); i++) {
+            gCamCapability[cameraId]->picture_sizes_tbl[i] = camera1_picture_sizes_override[i];
+        }
+        gCamCapability[cameraId]->picture_sizes_tbl_cnt = ARRAY_SIZE(camera1_picture_sizes_override);
+
+        for (size_t i = 0; i < ARRAY_SIZE(camera1_video_sizes_override); i++) {
+            gCamCapability[cameraId]->video_sizes_tbl[i] = camera1_video_sizes_override[i];
+        }
+        gCamCapability[cameraId]->video_sizes_tbl_cnt = ARRAY_SIZE(camera1_video_sizes_override);
+
+        for (size_t i = 0; i < ARRAY_SIZE(camera1_video_sizes_override); i++) {
+            gCamCapability[cameraId]->livesnapshot_sizes_tbl[i] = camera1_video_sizes_override[i];
+        }
+        gCamCapability[cameraId]->livesnapshot_sizes_tbl_cnt = ARRAY_SIZE(camera1_video_sizes_override);
+    }
+
 failed_op:
     cameraHandle->ops->close_camera(cameraHandle->camera_handle);
     cameraHandle = NULL;
