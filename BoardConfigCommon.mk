@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The MoKee Open Source Project
+# Copyright (C) 2018-2019 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -129,10 +129,6 @@ TARGET_LD_SHIM_LIBS += /vendor/lib/libmmcamera_ppeiscore.so|/vendor/lib/libshim_
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 WITH_MOKEE_CHARGER := false
-
-# MK Hardware
-BOARD_USES_MOKEE_HARDWARE := true
-BOARD_HARDWARE_CLASS += hardware/mokee/mkhw
 
 # CNE and DPM
 BOARD_USES_QCNE := true
