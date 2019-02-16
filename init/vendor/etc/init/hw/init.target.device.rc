@@ -25,6 +25,12 @@ on boot
     chmod 0600 /proc/fingerprint/suspend
     chown system system /proc/fingerprint/suspend
 
+    # Keypad
+    chown system system /proc/keypad/volume_up
+    chown system system /proc/keypad/volume_down
+    chown system system /proc/keypad/power
+    chown system system /proc/keypad/shortcuts
+
 service ifaad /system/bin/ifaad
     class late_start
     user  system
