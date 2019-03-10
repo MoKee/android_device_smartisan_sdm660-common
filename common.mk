@@ -232,9 +232,8 @@ PRODUCT_BOOT_JARS += \
     ifaa_fw
 
 # Input
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/keylayout/qpnp_pon.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/qpnp_pon.kl
+PRODUCT_PACKAGES += \
+    KeyHandlerSmartisan
 
 # IPv6
 PRODUCT_PACKAGES += \
