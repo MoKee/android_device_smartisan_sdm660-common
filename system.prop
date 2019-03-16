@@ -302,6 +302,3 @@ persist.fw.update.allowed=0
 
 # CA config
 ro.radio.ca.enable=true
-
-# Time services
-persist.vendor.delta_time.enable=true
