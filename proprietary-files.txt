@@ -458,6 +458,8 @@ vendor/lib64/libperipheral_client.so
 # Sensors
 etc/sensors/hals.conf:vendor/etc/sensors/hals.conf
 etc/sensors/sensor_def_qcomdev.conf:vendor/etc/sensors/sensor_def_qcomdev.conf
+vendor/lib/sensors.ssc.so
+vendor/lib64/sensors.ssc.so
 
 # Signed graphics firmware
 etc/firmware/a512_zap.b00:vendor/firmware/a512_zap.b00
