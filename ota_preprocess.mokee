@@ -29,4 +29,5 @@ ensure_file system/vendor/etc/permissions/android.hardware.nfc.hce.xml
 ensure_file system/vendor/etc/permissions/android.hardware.nfc.hcef.xml
 ensure_file system/vendor/etc/permissions/android.hardware.nfc.xml
 ensure_file system/vendor/etc/permissions/com.android.nfc_extras.xml
-ensure_file system/vendor/etc/init/vendor.nxp.hardware.nfc@1.0-service.rc
+ensure_file system/vendor/etc/permissions/com.nxp.mifare.xml
+ensure_file system/vendor/etc/init/vendor.nxp.hardware.nfc@1.1-service.rc
