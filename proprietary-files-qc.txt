@@ -729,4 +729,3 @@ vendor/bin/time_daemon
 # Wi-Fi
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so
