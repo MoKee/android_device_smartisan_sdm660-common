@@ -13,7 +13,6 @@ LOCAL_SHARED_LIBRARIES := \
     libcutils \
     liblog \
     libhidlbase \
-    libhidltransport \
     libhardware \
     libutils \
     android.hardware.biometrics.fingerprint@2.1
