@@ -118,8 +118,6 @@ QCOM_BT_USE_SMD_TTY := true
 
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-DEVICE_SPECIFIC_CAMERA_PATH := $(COMMON_PATH)/camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 TARGET_LD_SHIM_LIBS += /vendor/lib/libmmcamera_ppeiscore.so|/vendor/lib/libshim_camera.so
 
