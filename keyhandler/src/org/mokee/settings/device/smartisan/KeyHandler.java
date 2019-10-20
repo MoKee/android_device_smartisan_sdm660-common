@@ -214,7 +214,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 : WindowManager.TAKE_SCREENSHOT_FULLSCREEN;
 
         try {
-            WindowManagerGlobal.getWindowManagerService().takeScreenshot(type);
+            WindowManagerGlobal.getWindowManagerService().mokeeTakeScreenshot(type);
         } catch (RemoteException e) {
             Log.e(TAG, "Error while trying to takeScreenshot.", e);
         }
