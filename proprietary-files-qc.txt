@@ -581,7 +581,7 @@ vendor/radio/qcril_database/qcril.db
 # Radio - IMS
 -app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
--priv-app/ims/ims.apk
+-priv-app/ims/ims.apk|f04bbd8657c762d29572b643bed90b66d4921e87
 etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 etc/permissions/com.qualcomm.qti.imscmservice.xml
