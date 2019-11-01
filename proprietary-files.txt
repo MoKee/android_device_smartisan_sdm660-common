@@ -449,12 +449,6 @@ etc/firmware/DE.o.sdm660:vendor/firmware/DE.o.sdm660
 # NFC firmware
 vendor/firmware/libpn553_fw.so
 
-# Peripheral manager
-bin/pm-proxy:vendor/bin/pm-proxy
-bin/pm-service:vendor/bin/pm-service
-vendor/lib/libperipheral_client.so
-vendor/lib64/libperipheral_client.so
-
 # Sensors
 etc/sensors/hals.conf:vendor/etc/sensors/hals.conf
 etc/sensors/sensor_def_qcomdev.conf:vendor/etc/sensors/sensor_def_qcomdev.conf
