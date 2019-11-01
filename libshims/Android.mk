@@ -33,3 +33,20 @@ LOCAL_MULTILIB := 32
 LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := ims_shim.cpp
+
+LOCAL_C_INCLUDES := \
+    frameworks/native/include
+
+LOCAL_SHARED_LIBRARIES := \
+    libgui \
+    libui
+
+LOCAL_MODULE := libshim_ims
+LOCAL_MODULE_TAGS := optional
+LOCAL_MULTILIB := both
+
+include $(BUILD_SHARED_LIBRARY)
