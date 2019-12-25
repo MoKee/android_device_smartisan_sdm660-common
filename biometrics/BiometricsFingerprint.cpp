@@ -340,7 +340,6 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             }
             break;
         case FINGERPRINT_TEMPLATE_ENUMERATING:
-#ifndef SMARTISAN_HACK
             ALOGD("onEnumerate(fid=%d, gid=%d, rem=%d)",
                 msg->data.enumerated.finger.fid,
                 msg->data.enumerated.finger.gid,
@@ -351,7 +350,6 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
                     msg->data.enumerated.remaining_templates).isOk()) {
                 ALOGE("failed to invoke fingerprint onEnumerate callback");
             }
-#endif
             break;
     }
 }
