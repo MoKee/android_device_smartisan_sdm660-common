@@ -223,7 +223,7 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_smartisan
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2019-4-10
+VENDOR_SECURITY_PATCH := 2019-10-10
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
