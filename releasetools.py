@@ -47,7 +47,7 @@ def AddModemAssertion(info):
 
 def KillMagisk(info):
   info.script.Mount("/system")
-  info.script.AppendExtra('delete("/system/addon.d/99-magisk.sh");')
+  info.script.AppendExtra('delete("/system/system/addon.d/99-magisk.sh");')
   info.script.Unmount("/system")
 
 def AddDeunifyScript(info):
